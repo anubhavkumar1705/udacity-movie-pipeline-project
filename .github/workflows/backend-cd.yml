@@ -12,7 +12,7 @@ jobs:
     environment: Devlopmnet Environment
 
     steps:
-    - name: Checkout repo
+    - name: Checkout Repo
       uses: actions/checkout@v3
 
     - name: Setup Python
@@ -91,7 +91,7 @@ jobs:
       working-directory: starter/backend/k8s
       env:
         IMAGE_TAG: latest
-        REPO_NAME: backend
+        REPO_NAME: udacity/backend
       run: |
         aws eks update-kubeconfig --name udacity-cluster --region us-east-1
         kustomize edit set image backend=203598574069.dkr.ecr.us-east-1.amazonaws.com/$REPO_NAME:$IMAGE_TAG
