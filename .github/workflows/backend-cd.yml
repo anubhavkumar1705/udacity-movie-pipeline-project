@@ -78,7 +78,7 @@ jobs:
     - name: Build and Push Docker Image
       working-directory: starter/backend
       env:
-        IMAGE_TAG: latest
+        IMAGE_TAG: v1
         REPO_NAME: udacity/backend
       run: |
         docker build --build-arg=REACT_APP_MOVIE_API_URL=http://a6e0ac28d192b487187c93dee6c0469d-788140761.us-east-1.elb.amazonaws.com --tag 203598574069.dkr.ecr.us-east-1.amazonaws.com/$REPO_NAME:$IMAGE_TAG .
@@ -90,7 +90,7 @@ jobs:
     - name: Deploy Docker Image to Amazon EKS
       working-directory: starter/backend/k8s
       env:
-        IMAGE_TAG: latest
+        IMAGE_TAG: v1
         REPO_NAME: udacity/backend
       run: |
         aws eks update-kubeconfig --name udacity-cluster --region us-east-1
