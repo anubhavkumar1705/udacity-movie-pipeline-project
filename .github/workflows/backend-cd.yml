@@ -12,7 +12,7 @@ jobs:
     environment: Devlopmnet Environment
 
     steps:
-    - name: Checkout Repo
+    - name: Checkout repo
       uses: actions/checkout@v3
 
     - name: Setup Python
