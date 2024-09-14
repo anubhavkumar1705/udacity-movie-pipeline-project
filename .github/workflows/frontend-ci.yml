@@ -12,10 +12,10 @@ jobs:
     environment: Devlopmnet Environment
 
     steps:
-    - name: Check the Repository
+    - name: Checkout Repo
       uses: actions/checkout@v3
 
-    - name: Use Node.js 18
+    - name: Use Nodejs 18
       uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -33,10 +33,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check the Repository
+    - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Use Node.js 18
+    - name: Use Nodejs 18
       uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -54,10 +54,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Check the Repository
+    - name: Checkout Repo
       uses: actions/checkout@v3
     
-    - name: Use Node.js 18
+    - name: Use Nodejs 18
       uses: actions/setup-node@v3
       with:
         node-version: 18
@@ -67,6 +67,6 @@ jobs:
     - name: Build and Run Docker Image
       run: |
         cd starter/frontend
-        docker build --build-arg=REACT_APP_MOVIE_API_URL=http://localhost:5000 --tag=mp-frontend:latest .
-        docker run --name mp-frontend -p 3000:3000 -d mp-frontend
+        docker build --build-arg=MOVIE_API_URL=http://localhost:5000 --tag=mpp-frontend:latest .
+        docker run --name mpp-frontend -p 3000:3000 -d mpp-frontend
 

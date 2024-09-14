@@ -12,13 +12,13 @@ jobs:
     environment: Devlopmnet Environment
 
     steps:
-    - name: Check the Repository
+    - name: Checkout repo
       uses: actions/checkout@v3
 
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-        python-version: "3.10"
+        python-version: "3.12"
 
     - name: Install Dependencies
       working-directory: starter/backend 
@@ -40,7 +40,7 @@ jobs:
     - name: Use Python 3
       uses:  actions/setup-python@v4
       with:
-        python-version: "3.10"
+        python-version: "3.12"
 
     - name: Install Dependencies
       working-directory: starter/backend 
@@ -64,6 +64,6 @@ jobs:
     - name: Build Docker Image
       run: |
         cd starter/backend
-        docker build --tag mp-backend:latest .
+        docker build --tag mpp-backend:latest .
 
 
